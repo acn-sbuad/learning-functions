@@ -4,9 +4,15 @@ title: Task 2
 nav_order: 2
 ---
 
-## Set up database in Azure
-
 ##  Creating an Azure Function with a Cosmos DB trigger
+
+In this task we will be creating an Azure Functions with a Cosmos DB trigger. 
+Cosmos DB is a document database hosted in Azure. As with all databases you can read, insert, update and delete elements in it. 
+
+When a function is set up with a CosmosDB trigger the function logic will be executed whenever an item is inserted or updated in the database. 
+
+
+### The case
 
 In this and future tasks, you will be working with a [website for rating pizza](https://pizzaapp.z1.web.core.windows.net/). The site collects ratings for various pizzas and users can give a score from 0 to 4. The ratings are stored in an Azure Cosmos DB. Cosmos DB is a fully managed NoSQL database for modern app development.
 
@@ -26,6 +32,11 @@ Your individual resources will be identified by using the GUID displayed in the 
 ![guid](images/guid.png)    
 
 Keep this GUID handy and insert it everywhere in the description where `[INSERT GUID]` is mentioned.
+
+
+### Set up database in Azure
+
+
 
 ### Create a new Azure Function
 
