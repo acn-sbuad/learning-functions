@@ -41,7 +41,18 @@ The case will be completed in three steps
 
   ![CosmosDB select API](images/portal-selectapi.png)
 
-4. Insert Basic
+4. Set the basic configurations for the database
+  - **Resource group**: `learning-functions-rg`
+  - **Account Name**: `learning-functions-[insert initials]-db`
+  - **Location**: `(Europe) North Europe`
+  - **Capacity mode**: `Serverless`
+
+5. Click review and Create 
+
+![Portal confirm database](images/portal-db-config-complete.png)
+6. Once validation has passed. Click create.
+
+While your database is being provisioned enjoy a coffee break! :) 
 
 ### Create a new Azure Function
 
