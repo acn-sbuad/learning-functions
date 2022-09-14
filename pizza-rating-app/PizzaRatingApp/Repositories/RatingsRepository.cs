@@ -92,18 +92,10 @@ namespace PizzaRatingApp.Repositories
      
             Database database = await _client.CreateDatabaseIfNotExistsAsync(DatabaseId);
 
-            // setting up leases collection for function
-            ContainerProperties leasesProp = new ContainerProperties(id: $"leases", partitionKeyPath: "/id");
-            await database.CreateContainerIfNotExistsAsync(
-            containerProperties: leasesProp,
-            throughput: 400);
-
-
             ContainerProperties containerProperties = new ContainerProperties(id: $"ratings", partitionKeyPath: "/pizzaId");
 
             return await database.CreateContainerIfNotExistsAsync(
-                containerProperties: containerProperties,
-                throughput: 400);
+                containerProperties: containerProperties);
                 });
 
             return client;
