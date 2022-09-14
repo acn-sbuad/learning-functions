@@ -25,14 +25,23 @@ For the purpose of this workshop, each instance of the website will store the ra
 For the website to identify your database, you will have to provide the connection string to your database.
 
 The case will be completed in three steps
-1. Setting up a database in Azure 
-    - This database will be set up in your personal account and is where the pizza ratings will be persisted.
-2. Setting  up the function based on the template
-3. Modifying the template to fit your needs
+1. **Setting up a database in Azure**: This database will be set up in your personal account and is where the pizza ratings will be persisted.
+2. **Setting  up the function based on the template**
+3. **Modifying the template to fit your needs**
+4. **Deleting Azure resources**
 
 ### Set up database in Azure
 
+1. In a browser, go to https://portal.azure.com
+2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service
 
+  ![Azure Portal Search bar](images/portal-searchbar.png)
+
+3. Click `Create` and select the Create for the _Core (SQL) API_
+
+  ![CosmosDB select API](images/portal-selectapi.png)
+
+4. Insert Basic
 
 ### Create a new Azure Function
 
@@ -158,3 +167,8 @@ The template function only accesses the first element in the input collection. I
     _Hint_: Use a switch case.
 
   [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printStringBasedOnScore)    
+
+
+### Deleting Azure resources
+
+When testing in Azure, always remember to delete the resources once you're done as they might keep generating costs and draining your account for credits. 
