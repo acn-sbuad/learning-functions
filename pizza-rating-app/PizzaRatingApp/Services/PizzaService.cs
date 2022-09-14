@@ -24,6 +24,10 @@ namespace PizzaRatingApp.Services
         {
             List<Pizza> pizzas = await _pizzaRepository.GetPizzas();
 
+            if(string.IsNullOrEmpty(connectionString))
+            {
+                return pizzas;
+            }
 
             foreach (Pizza pizza in pizzas)
             {
