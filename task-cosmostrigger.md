@@ -212,3 +212,5 @@ The template function only accesses the first element in the input collection. I
 ### Deleting Azure resources
 
 When testing in Azure, always remember to delete the resources once you're done as they might keep generating costs and draining your account for credits.
+
+[TODO]
