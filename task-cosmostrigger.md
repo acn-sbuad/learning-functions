@@ -81,7 +81,7 @@ While your database is being provisioned enjoy a coffee break! :)
 5. In your db connection string into the input box in the upper right corner and click `Update`
    ![Pizza rating site](images/clean-page-no-string.png)
 
-You should now be able to add ratings to the various pizzas. Which one is your favorite?
+You should now be able to add ratings to the pizzas on the website. Which one is your favorite?
 
 In the next step we will be creating the function that will respond to the inputting of ratings on this site.
 
