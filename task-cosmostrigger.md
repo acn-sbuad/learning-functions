@@ -31,12 +31,16 @@ The case will be completed in three steps
 
 ### Set up database in Azure
 
+You can either set up a free sandbox database
+or a database in your personal Azure Directory.
+
 {{% expandlarge id="free" header="Create sandbox data base" %}}
 
 1. In a browser go to https://cosmos.azure.com/try/
 2. Click `Select` for `Core (Reccommended)`
+   ![Select API](portal-free-db.png)
 3. Complete the sign in process using a Microsoft or GitHub account.
-4.
+4. Once successfully signed in, click `Open in portal`
 
 {{% /expandlarge %}}
 
@@ -68,6 +72,18 @@ The case will be completed in three steps
 While your database is being provisioned enjoy a coffee break! :)
 
 ### Connect the pizza site to your new database
+
+1. In a browser, navigate to the Azure Portal and open your newly created Cosmos DB resource.
+2. In the left menu under _Settings_ click `Keys`.
+   ![Keys settings in portal](images/portal-get-key.png)
+3. Copy the read-write primary connection string. This will be required as input in the pizza site.
+4. In a browser, go to https://pizzaapp.z1.web.core.windows.net/
+5. In your db connection string into the input box in the upper right corner and click `Update`
+   ![Pizza rating site](images/clean-page-no-string.png)
+
+You should now be able to add ratings to the various pizzas. Which one is your favorite?
+
+In the next step we will be creating the function that will respond to the inputting of ratings on this site.
 
 ### Create a new Azure Function
 
