@@ -6,7 +6,13 @@ nav_order: 1
 
 ## Creating an Azure Function with an HTTP trigger
 
-### Set up the Azure Function App
+In task 1 you will be setting up an Azure Function with an HTTP trigger. 
+
+We use functions with an HTTP trigger if you want the function to run whenever a request is sent to the endpoint the function is exposed on. This could be useful to serve serverless APIs or to respond to webhooks. 
+
+
+
+### Set up the Azure Function App 
 The Azure Functions extension in VS Code lets you create a function app project, along with your first function.
 
 1. In VS Code, under the `Workspace` section of the Azure extension, select `Add` and `Create Function`.
