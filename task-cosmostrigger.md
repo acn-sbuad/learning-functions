@@ -7,32 +7,28 @@ nav_order: 2
 ##  Creating an Azure Function with a Cosmos DB trigger
 
 In this task we will be creating an Azure Functions with a Cosmos DB trigger. 
-Cosmos DB is a document database hosted in Azure. As with all databases you can read, insert, update and delete elements in it. 
-
-When a function is set up with a CosmosDB trigger the function logic will be executed whenever an item is inserted or updated in the database. 
+Cosmos DB is a fully managed NoSQL database for modern app development. As with all databases you can read, insert, update and delete elements in it. Including a Cosmos DB trigger to a function will result in the function being executed whenever a document is inserted or updated in the database. 
 
 
 ### The case
 
-In this and future tasks, you will be working with a [website for rating pizza](https://pizzaapp.z1.web.core.windows.net/). The site collects ratings for various pizzas and users can give a score from 0 to 4. The ratings are stored in an Azure Cosmos DB. Cosmos DB is a fully managed NoSQL database for modern app development.
+In this task you will be working with a [website for rating pizza](https://pizzaapp.z1.web.core.windows.net/). The site collects ratings for various pizzas and users can rate each pizza using emojis. Each emojis translates into a score between 0 to 4 and the rating is stored in Cosmos DB. Your task is to create an Azure Function that is executed whenever a new rating is given on the web site. 
 
 ![website overview](images/website-overview.png)    
-
 
 
 ![rating](images/rating.png)    
 
 
-Your task will be to create an Azure Function that is triggered each time a new rating is given on the site. This can be done using a Azure function with a Cosmos DB trigger.
+For the purpose of this workshop, each instance of the website will store the ratings in a database determined by the user. This way, you can test your function by adding a rating to the site and these only being registered in your database, hence only triggering _your_ function.
 
-For the purpose of this workshop, each instance of the site stores the ratings in a separate collection in Cosmos DB. This way, you can test you function by adding a rating to the site, and it only triggers your function.
+For the website to identify your database, you will have to provide the connection string to your database.
 
-Your individual resources will be identified by using the GUID displayed in the top right corner of the website. 
-
-![guid](images/guid.png)    
-
-Keep this GUID handy and insert it everywhere in the description where `[INSERT GUID]` is mentioned.
-
+The case will be completed in three steps
+1. Setting up a database in Azure 
+    - This database will be set up in your personal account and is where the pizza ratings will be persisted.
+2. Setting  up the function based on the template
+3. Modifying the template to fit your needs
 
 ### Set up database in Azure
 
