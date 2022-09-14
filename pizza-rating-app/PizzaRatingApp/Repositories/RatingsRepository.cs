@@ -83,22 +83,21 @@ namespace PizzaRatingApp.Repositories
         }
 
         private async Task<Container> GetContainer(string connectionString)
-        {        
-           
+        {                 
             var client = await _memoryCache.GetOrCreateAsync(connectionString, async cacheEntry => 
                 {
                     var _client = new CosmosClient(connectionString,
                 new CosmosClientOptions { SerializerOptions = new CosmosSerializationOptions { PropertyNamingPolicy = CosmosPropertyNamingPolicy.CamelCase } });
      
+                });
+
+            
             Database database = await _client.CreateDatabaseIfNotExistsAsync(DatabaseId);
 
             ContainerProperties containerProperties = new ContainerProperties(id: $"ratings", partitionKeyPath: "/pizzaId");
 
             return await database.CreateContainerIfNotExistsAsync(
                 containerProperties: containerProperties);
-                });
-
-            return client;
         }
     }
 }
