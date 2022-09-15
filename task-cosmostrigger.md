@@ -97,6 +97,9 @@ While your database is being provisioned enjoy a coffee break! :)
 
 You should now be able to add ratings to the pizzas on the website. Which one is your favorite?
 
+You should see a new container `ratings` in your database containing the pizza ratings
+![Rating container](images/rating-container-portal.png)
+
 In the next step we will be creating the function that will respond to the inputting of ratings on this site.
 
 ### Create a new Azure Function
