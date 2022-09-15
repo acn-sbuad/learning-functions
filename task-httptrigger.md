@@ -10,9 +10,14 @@ In task 1 you will be setting up an Azure Function with an HTTP trigger.
 
 We use functions with an HTTP trigger if you want the function to run whenever a request is sent to the endpoint the function is exposed on. This could be useful to serve serverless APIs or to respond to webhooks.
 
+### Table of contents
+
 [Set up the Azure Function APp](#set-up-the-azure-function-app)
+
 [The project files](#the-project-files)
+
 [Run the template project](#run-the-template-project)
+
 [Modifying the HTTP trigger function](#modifying-the-http-trigger-function)
 
 ### Set up the Azure Function App
