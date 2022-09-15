@@ -34,7 +34,7 @@ The case will be completed in three steps
 You can either set up a free sandbox database
 or a database in your personal Azure Directory.
 
-{{% expandlarge id="free" header="Create sandbox data base" %}}
+{{% expandlarge id="sandbox" header="Create sandbox data base" %}}
 
 1. In a browser go to https://cosmos.azure.com/try/
 2. Click `Select` for `Core (Reccommended)`
@@ -44,7 +44,7 @@ or a database in your personal Azure Directory.
 
 {{% /expandlarge %}}
 
-{{% expandlarge id="free" header="Create a permanent database" %}}
+{{% expandlarge id="permanent" header="Create a permanent database" %}}
 
 1. In a browser, go to https://portal.azure.com
 2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service
@@ -208,9 +208,3 @@ The template function only accesses the first element in the input collection. I
    _Hint_: Use a switch case.
 
 [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printStringBasedOnScore)
-
-### Deleting Azure resources
-
-When testing in Azure, always remember to delete the resources once you're done as they might keep generating costs and draining your account for credits.
-
-[TODO]
