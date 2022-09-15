@@ -88,6 +88,8 @@ public class RatingsRepository : IRatingsRepository
 
             Database database = await _client.CreateDatabaseIfNotExistsAsync(DatabaseId);
 
+            await database.CreateContainerIfNotExistsAsync(new ContainerProperties("leases", string.Empty));
+
             var containerProperties = new ContainerProperties("ratings", "/pizzaId");
 
             return await database.CreateContainerIfNotExistsAsync(
