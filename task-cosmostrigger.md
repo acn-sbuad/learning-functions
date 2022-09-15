@@ -45,18 +45,20 @@ The case will be completed in three steps
 
 ### Set up database in Azure
 
-You can either set up a free sandbox database
-or a database in your personal Azure Directory.
+In this section, you are given _two_ options on how to set up the database.
 
-**Create sandbox data base**
+- (A) Set up a free sandbox database in Azure
+- (B) Set up a database in an Azure Subscription you control
+
+**Alternative A: Create a database in a sandbox environment**
 
 1. In a browser go to https://cosmos.azure.com/try/
-2. Click `Select` for `Core (Reccommended)`
+2. Click `Select` for `Core (Recommended)`
    ![Select API](portal-free-db.png)
 3. Complete the sign in process using a Microsoft or GitHub account.
 4. Once successfully signed in, click `Open in portal`
 
-**Create sandbox data base**
+**Alternative B: Create a database in an Azure Subscription you control**
 
 1. In a browser, go to https://portal.azure.com
 2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service

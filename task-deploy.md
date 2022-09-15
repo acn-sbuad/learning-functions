@@ -6,7 +6,19 @@ nav_order: 3
 
 ## Deploying the functions to Azure
 
-Until now you have been running the functions locally. This step describes how deploy the function to Azure.
+Until now you have been running the functions locally. In this task, you will deploy the functions you've made to Azure.
+
+### Table of contents
+
+[Publishing function app from VS Code](#publishing-function-app-from-vs-code)
+
+[Trigger the HTTP function through the portal](#trigger-the-http-function-in-azure-portals)
+
+[Deleting Azure resources](#deleting-azure-resources)
+
+### Publishing function app from VS Code
+
+This step describes how deploy the function to Azure.
 
 ![Create Azure function app in Azure](images/create-azure-function.png)
 
@@ -22,7 +34,7 @@ Once the creation process is complete you should be able see your newly created 
 **Deploy the code to your newly created function app**
 ![Deploy project to Azure Funciton App](images/deploy.png)
 
-### Trigger functions / logs in Azure portals
+### Trigger the HTTP function in Azure portals
 
 In order to trigger a function navigate to the trigger:
 
