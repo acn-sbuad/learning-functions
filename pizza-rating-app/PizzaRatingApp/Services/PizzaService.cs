@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
 using System.Threading.Tasks;
-
 using PizzaRatingApp.Models;
 using PizzaRatingApp.Repositories;
 
@@ -10,28 +9,45 @@ namespace PizzaRatingApp.Services
 {
     public class PizzaService : IPizzaService
     {
-        private readonly IPizzaRepository _pizzaRepository;
-
         private readonly IRatingsRepository _ratingsRepository;
 
-        public PizzaService(IPizzaRepository pizzaRepository, IRatingsRepository ratingsRepository)
+        private readonly string _path;
+
+        public PizzaService(IRatingsRepository ratingsRepository)
         {
-            _pizzaRepository = pizzaRepository;
             _ratingsRepository = ratingsRepository;
+            _path =
+                Path
+                    .Combine(Path
+                        .GetDirectoryName(Assembly
+                            .GetExecutingAssembly()
+                            .Location),
+                    @"pizzas.json");
         }
 
         public async Task<List<Pizza>> GetPizzas(string connectionString)
         {
-            List<Pizza> pizzas = await _pizzaRepository.GetPizzas();
+            List<Pizza> pizzas =
+                System
+                    .Text
+                    .Json
+                    .JsonSerializer
+                    .Deserialize<List<Pizza>>(File.ReadAllText(_path),
+                    new System.Text.Json.JsonSerializerOptions {
+                        PropertyNamingPolicy =
+                            System.Text.Json.JsonNamingPolicy.CamelCase
+                    });
 
-            if(string.IsNullOrEmpty(connectionString))
+            if (string.IsNullOrEmpty(connectionString))
             {
                 return pizzas;
             }
 
             foreach (Pizza pizza in pizzas)
             {
-                List<Rating> ratings = await _ratingsRepository.GetRatingsForPizza(connectionString, pizza.Id);
+                List<Rating> ratings =
+                    await _ratingsRepository
+                        .GetRatingsForPizza(connectionString, pizza.Id);
                 int[] scores = new int[6];
                 pizza.RatingSummary = new Dictionary<int, int>();
                 foreach (Rating r in ratings)

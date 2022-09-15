@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Al prosciutto cotto",
+    "id": 1,
+    "imageSource": "https://wwwremaprodstorage.blob.core.windows.net/sys-master-hyb-prod/hc8/ha0/8824451760158/140328_Sommer_310_F_2_27583_tif_w1280hq75"    
+  },
+  {
+    "name": "Alla diavola",
+    "id": 2,
+    "imageSource": "https://speisekarte.menu/storage/media/dishes_main/1300217/depositphotos-15420707-m-1531911089.jpg"     
+  },
+  {
+    "name": "Calabrese",
+    "id": 3,
+    "imageSource": "https://grano.no/wp-content/uploads/2019/11/Calabrese.jpeg"     
+  },
+  {
+    "name": "Prosciutto di parma",
+    "id": 4,
+    "imageSource": "https://trinesmatblogg.no/app/uploads/2014/07/IMG_0655.jpg"     
+  },
+  {
+    "name": "Calzone al prosciutto cotto",
+    "id": 5,
+    "imageSource": "https://res.cloudinary.com/norgesgruppen/images/c_scale,dpr_auto,f_auto,q_auto:eco,w_1600/qkv0stvnzeiv9qj5jlct/calzone-med-ost-og-skinke" 
+  },
+  {
+    "name":"Pizza Grandiosa",
+    "id":6,
+    "imageSource":"https://res.cloudinary.com/norgesgruppen/image/upload/f_auto,q_50,w_420,h_420,c_pad/v1619050220/Product/7039010019804.jpg"
+
+  }
+]
