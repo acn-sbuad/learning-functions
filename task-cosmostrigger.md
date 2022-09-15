@@ -9,6 +9,13 @@ nav_order: 2
 In this task we will be creating an Azure Functions with a Cosmos DB trigger.
 Cosmos DB is a fully managed NoSQL database for modern app development. As with all databases you can read, insert, update and delete elements in it. Including a Cosmos DB trigger to a function will result in the function being executed whenever a document is inserted or updated in the database.
 
+[The case](#the-case)
+[Set up database in Azure](#set-up-database-in-azure)
+[Connect the pizza site to your new database](#connect-the-pizza-site-to-your-new-database)
+[Create a new Azure Function](#create-a-new-azure-function)
+[Complete setup of function](#complete-setup-of-function)
+[Modify Cosmos DB trigger function](#modify-cosmos-db-trigger-function)
+
 ### The case
 
 In this task you will be working with a [website for rating pizza](https://pizzaapp.z1.web.core.windows.net/). The site collects ratings for various pizzas and users can rate each pizza using emojis. Each emojis translates into a score between 0 to 4 and the rating is stored in Cosmos DB. Your task is to create an Azure Function that is executed whenever a new rating is given on the web site.
@@ -34,17 +41,16 @@ The case will be completed in three steps
 You can either set up a free sandbox database
 or a database in your personal Azure Directory.
 
-<details>
-  <summary>Create sandbox data base</summary>
+**Create sandbox data base**
+
 1. In a browser go to https://cosmos.azure.com/try/
 2. Click `Select` for `Core (Reccommended)`
    ![Select API](portal-free-db.png)
 3. Complete the sign in process using a Microsoft or GitHub account.
 4. Once successfully signed in, click `Open in portal`
-</details>
 
-<details>
-  <summary>Create a permanent database</summary>
+**Create sandbox data base**
+
 1. In a browser, go to https://portal.azure.com
 2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service
 
