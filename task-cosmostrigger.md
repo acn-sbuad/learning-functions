@@ -54,7 +54,7 @@ In this section, you are given _two_ options on how to set up the database.
 
 1. In a browser go to https://cosmos.azure.com/try/
 2. Click `Select` for `Core (Recommended)`
-   ![Select API](portal-free-db.png)
+   ![Select API](images/portal-free-db.png)
 3. Complete the sign in process using a Microsoft or GitHub account.
 4. Once successfully signed in, click `Open in portal`
 
@@ -140,36 +140,23 @@ Your function has now been setup. Your `local.settings.json` should be updated w
 
 `RatingTrigger.cs` is the function trigger. Within the `CosmosDBTrigger` attribute you should be able to see the values configured in the previous steps.
 
-### Using the trigger
 
-3) Add rating model class to be used by the function
+### Running the function
 
-   In `CosmosTriggerFunction.cs`, replace the class `MyDocument` with the model for rating
+Your function should now be ready to go and you can run it by typing the cmd `func start` in the terminal.
 
-   ```cs
-   public class Rating
-   {
-     public Guid Id { get; set; }
-
-     public int PizzaId { get; set; }
-
-     public int Score { get; set; }
-
-     public DateTime Created { get; set; }
-   }
-   ```
-
-   and change type for input from `IReadOnlyList<MyDocument>` to `IReadOnlyList<Rating>`
-
-4) Run the function
-
-   Your function should now be ready to go and you can run it by typing the cmd `func start` in the terminal.
-
-   Each time a rating is given on the web site, you should see activity in your console.
+Each time a rating is given on the web site, you should see activity in your console with the number of documents modified.
 
 **Question**
 
 The template function only accesses the first element in the input collection. In what cases would the collection hold more than one element?
+
+### Challenge: Modifying the output
+
+Are you able to modify the trigger to log a special message if a pizza gets the best rating(😍)?
+
+Tip:
+
 
 ### Modify Cosmos DB Trigger function
 
@@ -181,18 +168,22 @@ The template function only accesses the first element in the input collection. I
 
 2. Print the content of the rating in the console.
 
-   To convert the input object to a rating element by casting it.
+   _Hint_: The toString() method on the element will return a json representation of the entry
+
+
+3. Print a a special message if a pizza gets the best rating(😍)
+
+   _Hint_: Use `JsonSerializer` to deserialize the input from the trigger to a rating object
 
    ```cs
-   Rating r = (Rating) input[i];
+   public class Rating
+   {
+      public Guid id { get; set; }
+
+      public int pizzaId { get; set; }
+
+      public int score { get; set; }
+
+      public DateTime created { get; set; }
+   }
    ```
-
-   _Hint_: Use System.Text.Json.JsonSerializer to serialize the rating object to a json string.
-
-   [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printContent)
-
-3. Print a different string to the console depending of the score of the rating.
-
-   _Hint_: Use a switch case.
-
-[Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printStringBasedOnScore)
