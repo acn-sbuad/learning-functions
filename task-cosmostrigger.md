@@ -35,13 +35,12 @@ For the purpose of this workshop, each instance of the website will store the ra
 
 For the website to identify your database, you will have to provide the connection string to your database.
 
-The case will be completed in three steps
+The case will be completed in four steps
 
 1. **Setting up a database in Azure**: This database will be set up in your personal account and is where the pizza ratings will be persisted.
 2. **Connect your database to the pizza site**
 3. **Setting up the function based on the template**
 4. **Modifying the template to fit your needs**
-5. **Deleting Azure resources**
 
 ### Set up database in Azure
 
