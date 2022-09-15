@@ -4,9 +4,15 @@ title: Getting started
 nav_order: 1
 ---
 
-{{% expandlarge id="opprette-ny-applikasjon" header="Opprette ny applikasjon" %}}
-TESTING COLLAPSIBLE
-{{% /expandlarge %}}
+<details>
+  <summary>Opprette ny applikasjon</summary>
+ TESTING COLLAPSIBLE
+</details>
+
+<details>
+  <summary>##Opprette ny applikasjon</summary>
+ TESTING COLLAPSIBLE
+</details>
 
 # Prerequisites
 
