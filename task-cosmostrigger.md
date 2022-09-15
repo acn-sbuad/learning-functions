@@ -34,18 +34,17 @@ The case will be completed in three steps
 You can either set up a free sandbox database
 or a database in your personal Azure Directory.
 
-{{% expandlarge id="sandbox" header="Create sandbox data base" %}}
-
+<details>
+  <summary>Create sandbox data base</summary>
 1. In a browser go to https://cosmos.azure.com/try/
 2. Click `Select` for `Core (Reccommended)`
    ![Select API](portal-free-db.png)
 3. Complete the sign in process using a Microsoft or GitHub account.
 4. Once successfully signed in, click `Open in portal`
+</details>
 
-{{% /expandlarge %}}
-
-{{% expandlarge id="permanent" header="Create a permanent database" %}}
-
+<details>
+  <summary>Create a permanent database</summary>
 1. In a browser, go to https://portal.azure.com
 2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service
 
@@ -65,9 +64,9 @@ or a database in your personal Azure Directory.
 5. Click review and Create
 
 ![Portal confirm database](images/portal-db-config-complete.png)
-{{% /expandlarge %}}
 
 6. Once validation has passed. Click create.
+</details>
 
 While your database is being provisioned enjoy a coffee break! :)
 

@@ -4,16 +4,6 @@ title: Getting started
 nav_order: 1
 ---
 
-<details>
-  <summary>Opprette ny applikasjon</summary>
- TESTING COLLAPSIBLE
-</details>
-
-<details>
-  <summary>##Opprette ny applikasjon</summary>
- TESTING COLLAPSIBLE
-</details>
-
 # Prerequisites
 
 1. [Azure Functions Core v4](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Cwindows%2Ccsharp%2Cportal%2Cbash#install-the-azure-functions-core-tools)
