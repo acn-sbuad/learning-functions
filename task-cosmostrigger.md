@@ -105,62 +105,40 @@ In the next step we will be creating the function that will respond to the input
 
 You will now be prompted for configurations for the project and login to Azure. Input the following values:
 
-[TODO: go through steps and confirm what needs to be selected][note: could we have a file ready for them where they only need to replace certain parts of the code? ]
+- **1. Template for function**: Azure Cosmos DB trigger
 
-- **Template for function**: Azure Cosmos DB trigger
+- **2. Function name**: RatingTrigger
 
-- **Function name**: RatingTrigger
+- **3. Namespace**: LearningFunctions.RatingTrigger
 
-- **Namespace**: LearningFunctions.RatingTrigger
+- **4. App settings**: Create new local app settings
+ ![Create local app settings](images/create-local-settings.png)
 
-- **Database name**: storage
+- **5. Select the Azure subcription with the cosmos database**: If you are using the demo cosmos database instance use "Microsoft Azure Sponsorship" 
+ ![Select subscription](images/select-demo-subscription.png)
 
-- **Collection name**: ratings
+ - **6. Select the Comsos account to use**:
+ The name of the cosmos demo account is randomly generated
+ ![Select cosmos account](images/select-cosmos-account.png)
 
+- **7. Set the database name to "storage"**
+("Storage" is the name of database created by the pizza ranker API)
+ ![Create local settings](images/cosmos-database-name.png)
+
+- **8. Set the collection name to "ratings"**
+("Storage" is the name of container created by the pizza ranker API)
+ ![Create local settings](images/cosmos-collection-name.png)
+
+
+
+If promted for storage account. Press "Skip for now", it is not needed for this workshop.
   ![Prompt](images/storage-prompt.png)
 
-Your function has now been setup. Your local.settings.json should be updated with your cosmos connection string and a file `RatingTrigger.cs` added to your project folder.
+Your function has now been setup. Your `local.settings.json` should be updated with your cosmos connection string and a file `RatingTrigger.cs` added to your project folder.
 
-### Complete setup of function
+`RatingTrigger.cs` is the function trigger. Within the `CosmosDBTrigger` attribute you should be able to see the values configured in the previous steps.
 
-1. In `local.settings.json` you will now be adding a new property to the values section.
-
-<details open markdown="block">
-  <summary>
-  New settings property
-  </summary>
-    "CosmosConnection": "AccountEndpoint=https://abakus-workshop.documents.azure.com:443/;AccountKey=XnSfxZw1Npwzw5oDg1OvIDzBpX8h9KirkDLTsghy7myFCyW3YmOdyVIIyB0bINwmQju0UxIE6aN7C8CKhNK05w==;"
-</details>
-
-2. Complete the trigger configuration in `CosmosTriggerFunction.cs`
-
-   The `Run` function has a configuration for the Cosmos DB trigger,
-   but it is not yet complete.
-
-   ```cs
-   [CosmosDBTrigger(
-           databaseName: "storage",
-           collectionName: "ratings_[INSERT GUID]", // insert your guid here
-           ConnectionStringSetting = "",
-           LeaseCollectionName = "leases")]
-   ```
-
-   - Ensure that database name is set to `storage`, and that the collection name is set to `ratings_[GUID]`.
-
-   - The value of `ConnectionStringSetting` should be `"CosmosConnection"`. This refers to the value that was included in local.settings.json
-
-   - Change the value of `LeaseCollectionName` from _leases_ to `"leases_[GUID]"` Remember to insert your custom guid.
-
-   The fully configured attribute should look like this
-   "
-
-   ```cs
-   [CosmosDBTrigger(
-           databaseName: "storage",
-           collectionName: "ratings_88a3175c-310a-45b4-920d-c0576f617e5d",
-           ConnectionStringSetting = "CosmosConnection",
-           LeaseCollectionName = "leases_88a3175c-310a-45b4-920d-c0576f617e5d")]
-   ```
+### Using the trigger
 
 3) Add rating model class to be used by the function
 
