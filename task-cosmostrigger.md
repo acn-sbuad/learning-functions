@@ -9,11 +9,18 @@ nav_order: 2
 In this task we will be creating an Azure Functions with a Cosmos DB trigger.
 Cosmos DB is a fully managed NoSQL database for modern app development. As with all databases you can read, insert, update and delete elements in it. Including a Cosmos DB trigger to a function will result in the function being executed whenever a document is inserted or updated in the database.
 
+### Table of contents
+
 [The case](#the-case)
+
 [Set up database in Azure](#set-up-database-in-azure)
+
 [Connect the pizza site to your new database](#connect-the-pizza-site-to-your-new-database)
+
 [Create a new Azure Function](#create-a-new-azure-function)
+
 [Complete setup of function](#complete-setup-of-function)
+
 [Modify Cosmos DB trigger function](#modify-cosmos-db-trigger-function)
 
 ### The case
