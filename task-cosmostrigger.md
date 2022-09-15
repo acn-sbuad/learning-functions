@@ -97,21 +97,17 @@ You will now be prompted for configurations for the project and login to Azure. 
 
 - **Template for function**: Azure Cosmos DB trigger
 
-- **Function name**: CosmosTriggerFunction
+- **Function name**: RatingTrigger
 
-- **Namespace**: LearningFunctions.CosmosTriggerFunction
-
-- **Storage settings**: AzureWebJobsStorage
+- **Namespace**: LearningFunctions.RatingTrigger
 
 - **Database name**: storage
 
-- **Collection name**: ratings\_[INSERT GUID] e.g. `ratings_88a3175c-310a-45b4-920d-c0576f617e5d`
-
-- **Storage account prompt**: Use local emulator
+- **Collection name**: ratings
 
   ![Prompt](images/storage-prompt.png)
 
-Your function is now being set up and a file `CosmosTriggerFunction.cs` will be added to your folder.
+Your function has now been setup. Your local.settings.json should be updated with your cosmos connection string and a file `RatingTrigger.cs` added to your project folder.
 
 ### Complete setup of function
 
