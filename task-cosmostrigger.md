@@ -63,22 +63,22 @@ In this section, you are given _two_ options on how to set up the database.
 1. In a browser, go to https://portal.azure.com
 2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service
 
-![Azure Portal Search bar](images/portal-searchbar.png)
+   ![Azure Portal Search bar](images/portal-searchbar.png)
 
 3. Click `Create` and select the Create for the _Core (SQL) API_
 
-![CosmosDB select API](images/portal-selectapi.png)
+   ![CosmosDB select API](images/portal-selectapi.png)
 
 4. Set the basic configurations for the database
 
-- **Resource group**: `learning-functions-rg`
-- **Account Name**: `learning-functions-[insert initials]-db`
-- **Location**: `(Europe) North Europe`
-- **Capacity mode**: `Serverless`
+   - **Resource group**: `learning-functions-rg`
+   - **Account Name**: `learning-functions-[insert initials]-db`
+   - **Location**: `(Europe) North Europe`
+   - **Capacity mode**: `Serverless`
 
 5. Click review and Create
 
-![Portal confirm database](images/portal-db-config-complete.png)
+   ![Portal confirm database](images/portal-db-config-complete.png)
 
 6. Once validation has passed. Click create.
 </details>
