@@ -4,6 +4,8 @@ title: Task 2
 nav_order: 2
 ---
 
+TODO: Work through all tasks.
+
 ## Creating an Azure Function with a Cosmos DB trigger
 
 In this task we will be creating an Azure Functions with a Cosmos DB trigger.
@@ -74,7 +76,6 @@ In this section, you are given _two_ options on how to set up the database.
    ![Portal confirm database](images/portal-db-config-complete.png)
 
 6. Once validation has passed. Click create.
-</details>
 
 While your database is being provisioned enjoy a coffee break! :)
 
@@ -89,10 +90,14 @@ While your database is being provisioned enjoy a coffee break! :)
 ### Connect the pizza site to your new database
 
 1. In a browser, navigate to the Azure Portal and open your newly created Cosmos DB resource.
+
 2. In the left menu under _Settings_ click `Keys`.
    ![Keys settings in portal](images/portal-get-key.png)
+
 3. Copy the read-write primary connection string. This will be required as input in the pizza site.
+
 4. In a browser, go to https://pizzaapp.z1.web.core.windows.net/
+
 5. In your db connection string into the input box in the upper right corner and click `Update`
    ![Pizza rating site](images/clean-page-no-string.png)
 
@@ -155,8 +160,6 @@ The template function only accesses the first element in the input collection. I
 ### Challenge: Modifying the output
 
 Are you able to modify the trigger to log a special message if a pizza gets the best rating(😍)?
-
-Tip:
 
 ### Modify Cosmos DB Trigger function
 

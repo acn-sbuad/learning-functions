@@ -49,4 +49,4 @@ From the "Code + Test" view you can trigger functions (1) and see live logs(2).
 
 When testing in Azure, always remember to delete the resources once you're done as they might keep generating costs and draining your account for credits.
 
-[TODO]
+[TODO: Nathalie]

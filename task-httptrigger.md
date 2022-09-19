@@ -4,6 +4,8 @@ title: Task 1
 nav_order: 1
 ---
 
+TODO: double check all hints
+
 ## Creating an Azure Function with an HTTP trigger
 
 In task 1 you will be setting up an Azure Function with an HTTP trigger.
@@ -28,9 +30,9 @@ The Azure Functions extension in VS Code lets you create a function app project,
 
    ![Create project](images/add-in-azure-extension.png)
 
-2) You will now be given the option of creating a function project, select yes.
+2. You will now be given the option of creating a function project, select yes.
 
-![Create project prompt](images/create-project-prompt.png)
+   ![Create project prompt](images/create-project-prompt.png)
 
 Going forward you will not be prompted for configurations for the project. Input the following values:
 
