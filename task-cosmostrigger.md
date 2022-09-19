@@ -46,11 +46,10 @@ The case will be completed in four steps
 
 In this section, you are given _two_ options on how to set up the database.
 
-- (A) Set up a database in an Azure Subscription you control
-- (B) Set up a free sandbox database in Azure
+**NOTE** If you have credits in you Azure account go for option A.
 
-If you have credits in your personal Azure account,
-please go for option A.
+- A - Set up a database in an Azure Subscription you control
+- B - Set up a free sandbox database in Azure
 
 **Alternative A: Create a database in an Azure Subscription you control**
 
