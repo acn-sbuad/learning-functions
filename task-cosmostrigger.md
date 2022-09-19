@@ -46,18 +46,13 @@ The case will be completed in four steps
 
 In this section, you are given _two_ options on how to set up the database.
 
-- (A) Set up a free sandbox database in Azure
-- (B) Set up a database in an Azure Subscription you control
+- (A) Set up a database in an Azure Subscription you control
+- (B) Set up a free sandbox database in Azure
 
-**Alternative A: Create a database in a sandbox environment**
+If you have credits in your personal Azure account,
+please go for option A.
 
-1. In a browser go to https://cosmos.azure.com/try/
-2. Click `Select` for `Core (Recommended)`
-   ![Select API](images/portal-free-db.png)
-3. Complete the sign in process using a Microsoft or GitHub account.
-4. Once successfully signed in, click `Open in portal`
-
-**Alternative B: Create a database in an Azure Subscription you control**
+**Alternative A: Create a database in an Azure Subscription you control**
 
 1. In a browser, go to https://portal.azure.com
 2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service
@@ -83,6 +78,14 @@ In this section, you are given _two_ options on how to set up the database.
 </details>
 
 While your database is being provisioned enjoy a coffee break! :)
+
+**Alternative B: Create a database in a sandbox environment**
+
+1. In a browser go to https://cosmos.azure.com/try/
+2. Click `Select` for `Core (Recommended)`
+   ![Select API](images/portal-free-db.png)
+3. Complete the sign in process using a Microsoft or GitHub account.
+4. Once successfully signed in, click `Open in portal`
 
 ### Connect the pizza site to your new database
 
@@ -116,32 +119,29 @@ You will now be prompted for configurations for the project and login to Azure. 
 - **3. Namespace**: LearningFunctions.RatingTrigger
 
 - **4. App settings**: Create new local app settings
- ![Create local app settings](images/create-local-settings.png)
+  ![Create local app settings](images/create-local-settings.png)
 
-- **5. Select the Azure subcription with the cosmos database**: If you are using the demo cosmos database instance use "Microsoft Azure Sponsorship" 
- ![Select subscription](images/select-demo-subscription.png)
+- **5. Select the Azure subcription with the cosmos database**: If you are using the demo cosmos database instance use "Microsoft Azure Sponsorship"
+  ![Select subscription](images/select-demo-subscription.png)
 
- - **6. Select the Comsos account to use**:
- The name of the cosmos demo account is randomly generated
- ![Select cosmos account](images/select-cosmos-account.png)
+- **6. Select the Comsos account to use**:
+  The name of the cosmos demo account is randomly generated
+  ![Select cosmos account](images/select-cosmos-account.png)
 
 - **7. Set the database name to "storage"**
-("Storage" is the name of database created by the pizza ranker API)
- ![Create local settings](images/cosmos-database-name.png)
+  ("Storage" is the name of database created by the pizza ranker API)
+  ![Create local settings](images/cosmos-database-name.png)
 
 - **8. Set the collection name to "ratings"**
-("Storage" is the name of container created by the pizza ranker API)
- ![Create local settings](images/cosmos-collection-name.png)
-
-
+  ("Storage" is the name of container created by the pizza ranker API)
+  ![Create local settings](images/cosmos-collection-name.png)
 
 If promted for storage account. Press "Skip for now", it is not needed for this workshop.
-  ![Prompt](images/storage-prompt.png)
+![Prompt](images/storage-prompt.png)
 
 Your function has now been setup. Your `local.settings.json` should be updated with your cosmos connection string and a file `RatingTrigger.cs` added to your project folder.
 
 `RatingTrigger.cs` is the function trigger. Within the `CosmosDBTrigger` attribute you should be able to see the values configured in the previous steps.
-
 
 ### Running the function
 
@@ -159,7 +159,6 @@ Are you able to modify the trigger to log a special message if a pizza gets the 
 
 Tip:
 
-
 ### Modify Cosmos DB Trigger function
 
 1. Ensure that all changes to the ratings results in a log line in the console.
@@ -172,20 +171,19 @@ Tip:
 
    _Hint_: The toString() method on the element will return a json representation of the entry
 
-
-3. Print a a special message if a pizza gets the best rating(😍)
+3) Print a a special message if a pizza gets the best rating(😍)
 
    _Hint_: Use `JsonSerializer` to deserialize the input from the trigger to a rating object
 
    ```cs
    public class Rating
    {
-      public Guid id { get; set; }
+     public Guid id { get; set; }
 
-      public int pizzaId { get; set; }
+     public int pizzaId { get; set; }
 
-      public int score { get; set; }
+     public int score { get; set; }
 
-      public DateTime created { get; set; }
+     public DateTime created { get; set; }
    }
    ```
