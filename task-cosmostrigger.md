@@ -35,13 +35,12 @@ For the purpose of this workshop, each instance of the website will store the ra
 
 For the website to identify your database, you will have to provide the connection string to your database.
 
-The case will be completed in three steps
+The case will be completed in four steps
 
 1. **Setting up a database in Azure**: This database will be set up in your personal account and is where the pizza ratings will be persisted.
 2. **Connect your database to the pizza site**
 3. **Setting up the function based on the template**
 4. **Modifying the template to fit your needs**
-5. **Deleting Azure resources**
 
 ### Set up database in Azure
 
@@ -54,7 +53,7 @@ In this section, you are given _two_ options on how to set up the database.
 
 1. In a browser go to https://cosmos.azure.com/try/
 2. Click `Select` for `Core (Recommended)`
-   ![Select API](portal-free-db.png)
+   ![Select API](images/portal-free-db.png)
 3. Complete the sign in process using a Microsoft or GitHub account.
 4. Once successfully signed in, click `Open in portal`
 
@@ -97,6 +96,9 @@ While your database is being provisioned enjoy a coffee break! :)
 
 You should now be able to add ratings to the pizzas on the website. Which one is your favorite?
 
+You should see a new container `ratings` in your database containing the pizza ratings
+![Rating container](images/rating-container-portal.png)
+
 In the next step we will be creating the function that will respond to the inputting of ratings on this site.
 
 ### Create a new Azure Function
@@ -107,91 +109,56 @@ In the next step we will be creating the function that will respond to the input
 
 You will now be prompted for configurations for the project and login to Azure. Input the following values:
 
-[TODO: go through steps and confirm what needs to be selected][note: could we have a file ready for them where they only need to replace certain parts of the code? ]
+- **1. Template for function**: Azure Cosmos DB trigger
 
-- **Template for function**: Azure Cosmos DB trigger
+- **2. Function name**: RatingTrigger
 
-- **Function name**: RatingTrigger
+- **3. Namespace**: LearningFunctions.RatingTrigger
 
-- **Namespace**: LearningFunctions.RatingTrigger
+- **4. App settings**: Create new local app settings
+ ![Create local app settings](images/create-local-settings.png)
 
-- **Database name**: storage
+- **5. Select the Azure subcription with the cosmos database**: If you are using the demo cosmos database instance use "Microsoft Azure Sponsorship" 
+ ![Select subscription](images/select-demo-subscription.png)
 
-- **Collection name**: ratings
+ - **6. Select the Comsos account to use**:
+ The name of the cosmos demo account is randomly generated
+ ![Select cosmos account](images/select-cosmos-account.png)
 
+- **7. Set the database name to "storage"**
+("Storage" is the name of database created by the pizza ranker API)
+ ![Create local settings](images/cosmos-database-name.png)
+
+- **8. Set the collection name to "ratings"**
+("Storage" is the name of container created by the pizza ranker API)
+ ![Create local settings](images/cosmos-collection-name.png)
+
+
+
+If promted for storage account. Press "Skip for now", it is not needed for this workshop.
   ![Prompt](images/storage-prompt.png)
 
-Your function has now been setup. Your local.settings.json should be updated with your cosmos connection string and a file `RatingTrigger.cs` added to your project folder.
+Your function has now been setup. Your `local.settings.json` should be updated with your cosmos connection string and a file `RatingTrigger.cs` added to your project folder.
 
-### Complete setup of function
+`RatingTrigger.cs` is the function trigger. Within the `CosmosDBTrigger` attribute you should be able to see the values configured in the previous steps.
 
-1. In `local.settings.json` you will now be adding a new property to the values section.
 
-<details open markdown="block">
-  <summary>
-  New settings property
-  </summary>
-    "CosmosConnection": "AccountEndpoint=https://abakus-workshop.documents.azure.com:443/;AccountKey=XnSfxZw1Npwzw5oDg1OvIDzBpX8h9KirkDLTsghy7myFCyW3YmOdyVIIyB0bINwmQju0UxIE6aN7C8CKhNK05w==;"
-</details>
+### Running the function
 
-2. Complete the trigger configuration in `CosmosTriggerFunction.cs`
+Your function should now be ready to go and you can run it by typing the cmd `func start` in the terminal.
 
-   The `Run` function has a configuration for the Cosmos DB trigger,
-   but it is not yet complete.
-
-   ```cs
-   [CosmosDBTrigger(
-           databaseName: "storage",
-           collectionName: "ratings_[INSERT GUID]", // insert your guid here
-           ConnectionStringSetting = "",
-           LeaseCollectionName = "leases")]
-   ```
-
-   - Ensure that database name is set to `storage`, and that the collection name is set to `ratings_[GUID]`.
-
-   - The value of `ConnectionStringSetting` should be `"CosmosConnection"`. This refers to the value that was included in local.settings.json
-
-   - Change the value of `LeaseCollectionName` from _leases_ to `"leases_[GUID]"` Remember to insert your custom guid.
-
-   The fully configured attribute should look like this
-   "
-
-   ```cs
-   [CosmosDBTrigger(
-           databaseName: "storage",
-           collectionName: "ratings_88a3175c-310a-45b4-920d-c0576f617e5d",
-           ConnectionStringSetting = "CosmosConnection",
-           LeaseCollectionName = "leases_88a3175c-310a-45b4-920d-c0576f617e5d")]
-   ```
-
-3) Add rating model class to be used by the function
-
-   In `CosmosTriggerFunction.cs`, replace the class `MyDocument` with the model for rating
-
-   ```cs
-   public class Rating
-   {
-     public Guid Id { get; set; }
-
-     public int PizzaId { get; set; }
-
-     public int Score { get; set; }
-
-     public DateTime Created { get; set; }
-   }
-   ```
-
-   and change type for input from `IReadOnlyList<MyDocument>` to `IReadOnlyList<Rating>`
-
-4) Run the function
-
-   Your function should now be ready to go and you can run it by typing the cmd `func start` in the terminal.
-
-   Each time a rating is given on the web site, you should see activity in your console.
+Each time a rating is given on the web site, you should see activity in your console with the number of documents modified.
 
 **Question**
 
 The template function only accesses the first element in the input collection. In what cases would the collection hold more than one element?
+
+### Challenge: Modifying the output
+
+Are you able to modify the trigger to log a special message if a pizza gets the best rating(😍)?
+
+Tip:
+
 
 ### Modify Cosmos DB Trigger function
 
@@ -203,18 +170,22 @@ The template function only accesses the first element in the input collection. I
 
 2. Print the content of the rating in the console.
 
-   To convert the input object to a rating element by casting it.
+   _Hint_: The toString() method on the element will return a json representation of the entry
+
+
+3. Print a a special message if a pizza gets the best rating(😍)
+
+   _Hint_: Use `JsonSerializer` to deserialize the input from the trigger to a rating object
 
    ```cs
-   Rating r = (Rating) input[i];
+   public class Rating
+   {
+      public Guid id { get; set; }
+
+      public int pizzaId { get; set; }
+
+      public int score { get; set; }
+
+      public DateTime created { get; set; }
+   }
    ```
-
-   _Hint_: Use System.Text.Json.JsonSerializer to serialize the rating object to a json string.
-
-   [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printContent)
-
-3. Print a different string to the console depending of the score of the rating.
-
-   _Hint_: Use a switch case.
-
-[Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printStringBasedOnScore)
