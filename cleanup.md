@@ -4,11 +4,8 @@ title: Cleanup
 nav_order: 5
 ---
 
-[TODO: Nathalie]
-
 ## Cleaning up Resources in Azure
 
-Say something about why we cleanup. Saving cost ++
 
 ### Deleting Cosmos DB
 
