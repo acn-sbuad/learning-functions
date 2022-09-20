@@ -4,8 +4,6 @@ title: Task 1
 nav_order: 1
 ---
 
-TODO: double check all hints
-
 ## Creating an Azure Function with an HTTP trigger
 
 In task 1 you will be setting up an Azure Function with an HTTP trigger.

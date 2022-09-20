@@ -44,9 +44,3 @@ Then click "Code + Test"
 
 From the "Code + Test" view you can trigger functions (1) and see live logs(2).
 ![Function trigger & logs](images/trigger_logs_azure.png)
-
-### Deleting Azure resources
-
-When testing in Azure, always remember to delete the resources once you're done as they might keep generating costs and draining your account for credits.
-
-[TODO: Nathalie]
