@@ -55,7 +55,7 @@ In this section, you are given _two_ options on how to set up the database.
 
 **Alternative A: Create a database in an Azure Subscription you control**
 
-1. In a browser, go to https://portal.azure.com
+1. In a browser, go to the [Azure portal](https://portal.azure.com)
 2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service
 
    ![Azure Portal Search bar](images/portal-searchbar.png)
