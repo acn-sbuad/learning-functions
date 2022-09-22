@@ -22,6 +22,6 @@ After that you click on the "Delete resource group" button.
 <img width="960" alt="DeleteResourceGroup" src="https://user-images.githubusercontent.com/39302088/191030080-b658d8e3-cfc7-4b88-a34c-f3d506bc5e52.png">
 
 
-Finally, you have to confirm that you want to delete the resourcegroup. This is done by writing the name of the resourcegroup you desire to delete and then press the
+Finally, you have to confirm that you want to delete the resourcegroup. This is done by writing the name of the resourcegroup you desire to delete and then press the "Delete" button.
 
 <img width="441" alt="ConfirmDelete" src="https://user-images.githubusercontent.com/39302088/191031849-26640fcd-0d08-40d1-9050-b83dace2a0ea.png">
