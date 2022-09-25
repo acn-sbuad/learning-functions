@@ -4,8 +4,6 @@ title: Task 2
 nav_order: 2
 ---
 
-TODO: Work through all tasks.
-
 ## Creating an Azure Function with a Cosmos DB trigger
 
 In this task we will be creating an Azure Functions with a Cosmos DB trigger.
