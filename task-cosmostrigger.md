@@ -167,15 +167,16 @@ Are you able to modify the trigger to log a special message if a pizza gets the 
 
    _Hint_: Try looping through the input collection with a _ForEach_ loop.
 
-   [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/logAllChanges)
+   [Code hint](https://github.com/acn-sbuad/learning-functions/tree/task-description/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/logAllChanges)
 
 2. Print the content of the rating in the console.
 
    _Hint_: The toString() method on the element will return a json representation of the entry
+   [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printContent)
 
 3) Print a a special message if a pizza gets the best rating(😍)
 
-   _Hint_: Use `JsonSerializer` to deserialize the input from the trigger to a rating object
+   _Hint_: Use `JsonSerializer` from the `System.Text.Json` namespace to deserialize the input from the trigger to a rating object
 
    ```cs
    public class Rating
@@ -189,3 +190,5 @@ Are you able to modify the trigger to log a special message if a pizza gets the 
      public DateTime created { get; set; }
    }
    ```
+
+   [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printStringBasedOnScore)
