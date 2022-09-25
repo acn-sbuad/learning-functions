@@ -172,7 +172,7 @@ Are you able to modify the trigger to log a special message if a pizza gets the 
 2. Print the content of the rating in the console.
 
    _Hint_: The toString() method on the element will return a json representation of the entry
-   [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printContent)
+   [Code hint](https://github.com/acn-sbuad/learning-functions/tree/task-description/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printContent)
 
 3) Print a a special message if a pizza gets the best rating(😍)
 
@@ -191,4 +191,4 @@ Are you able to modify the trigger to log a special message if a pizza gets the 
    }
    ```
 
-   [Code hint](https://github.com/acn-sbuad/avanade-workshop/tree/main/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printStringBasedOnScore)
+   [Code hint](https://github.com/acn-sbuad/learning-functions/tree/task-description/hints/CosmosDbTriggerFunction/ModifyCosmosDbFunction/printStringBasedOnScore)
