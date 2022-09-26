@@ -44,14 +44,7 @@ The case will be completed in four steps
 
 ### Set up database in Azure
 
-In this section, you are given _two_ options on how to set up the database.
-
-**NOTE** If you have credits in you Azure account go for option A.
-
-- A - Set up a database in an Azure Subscription you control
-- B - Set up a free sandbox database in Azure
-
-**Alternative A: Create a database in an Azure Subscription you control**
+In this section, you you will set up the database.
 
 1. In a browser, go to the [Azure portal](https://portal.azure.com)
 2. Type in `Cosmos DB` in the search bar and select the _Azure Cosmos DB_ service
@@ -66,7 +59,7 @@ In this section, you are given _two_ options on how to set up the database.
 
    - **Resource group**: `learning-functions-rg`
    - **Account Name**: `learning-functions-[insert initials]-db`
-   - **Location**: `(Europe) North Europe`
+   - **Location**: `(Europe) West Europe`
    - **Capacity mode**: `Serverless`
 
 5. Click review and Create
@@ -76,14 +69,6 @@ In this section, you are given _two_ options on how to set up the database.
 6. Once validation has passed. Click create.
 
 While your database is being provisioned enjoy a coffee break! :)
-
-**Alternative B: Create a database in a sandbox environment**
-
-1. In a browser go to https://cosmos.azure.com/try/
-2. Click `Select` for `Core (Recommended)`
-   ![Select API](images/portal-free-db.png)
-3. Complete the sign in process using a Microsoft or GitHub account.
-4. Once successfully signed in, click `Open in portal`
 
 ### Connect the pizza site to your new database
 
