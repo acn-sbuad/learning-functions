@@ -33,4 +33,12 @@ We will now be connecting VS Code to your Azure Account
 
 Follow the instructions to sign in to your account.
 
+## Registering your Azure Credits
+
+1. You should have received a code to redeem your Azure Pass from the course instructors, if this is not the case, please reach out to them.
+2. In a browser, go to www.microsoftazurepass.com
+3. Click `Start`
+4. Sign in with the credentials you used to connect Azure to VS Code.
+5. Follow the instructions on how to claim the promo code.
+
 Congratulations, you are now ready to start developing your first Azure functions!
