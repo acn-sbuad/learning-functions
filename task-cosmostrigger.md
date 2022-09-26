@@ -112,8 +112,7 @@ You will now be prompted for configurations for the project and login to Azure. 
   ![Select subscription](images/select-demo-subscription.png)
 
 - **6. Select the Comsos account to use**:
-  The name of the cosmos demo account is randomly generated
-  ![Select cosmos account](images/select-cosmos-account.png)
+  Your newly generated db account should show up in the list, if this is not the case sign out from Azure in VS Code (Ctrl+Shift+P) and log back in before trying again.
 
 - **7. Set the database name to "storage"**
   ("Storage" is the name of database created by the pizza ranker API)
@@ -139,10 +138,6 @@ Each time a rating is given on the web site, you should see activity in your con
 **Question**
 
 The template function only accesses the first element in the input collection. In what cases would the collection hold more than one element?
-
-### Challenge: Modifying the output
-
-Are you able to modify the trigger to log a special message if a pizza gets the best rating(😍)?
 
 ### Modify Cosmos DB Trigger function
 
